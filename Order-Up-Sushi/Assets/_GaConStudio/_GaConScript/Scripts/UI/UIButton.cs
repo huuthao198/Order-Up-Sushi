@@ -6,7 +6,7 @@ public class UIButton : MonoBehaviour
     [Header("Settings")]
     public bool IsScale = false;
     public float loopScale = 1.1f;      // scale to bao nhiêu khi loop
-    public float loopDuration = 0.5f;   // thời gian scale 1 vòng
+    public float loopDuration = 1f;   // thời gian scale 1 vòng
 
     public float clickScale = 1.2f;     // scale khi click
     public float clickDuration = 0.2f;  // thời gian scale click

@@ -5,16 +5,15 @@ public class SaveManager : PersistantAndSingletonBehavior<SaveManager>
 {
     public int Leveled => level;
     public float Coin => coin;
-    public float CoinReward => coinRewarad;
     public bool IsSound => isSound;
     public bool IsMusic => isMusic;
 
     private float coin;
-    private float coinRewarad;
     private int level;
     private LevelData levelData;
     private bool isMusic;
     private bool isSound;
+
     public void LoadData()
     {
 
@@ -88,15 +87,21 @@ public class SaveManager : PersistantAndSingletonBehavior<SaveManager>
         //string fileName = $"level_{levelId}";
         //levelData = LevelLoader.LoadLevel(fileName);
 
-        levelData = AddressableAssetCache.Instance.GetLevel(levelId);
+        //levelData = AddressableAssetCache.Instance.GetLevel(levelId);
 
-        coinRewarad = UnityEngine.Random.Range((int)levelData.coinReward, (int)levelData.coinReward * 2);
+        //if (levelData != null)
+        //{
+        //    Debug.Log("Load level thành công: " + levelData.levelId);
+        //}
 
+
+        string fileName = $"level_{levelId}";
+        levelData = LevelLoader.LoadLevel(fileName);
         if (levelData != null)
         {
-            Debug.Log("Load level thành công: " + levelData.levelId);
+            Debug.Log($"Loaded Level {levelData.levelId} with {levelData.orders.Count} orders.");
         }
-    }
+}
 
     private float GetCoin()
     {

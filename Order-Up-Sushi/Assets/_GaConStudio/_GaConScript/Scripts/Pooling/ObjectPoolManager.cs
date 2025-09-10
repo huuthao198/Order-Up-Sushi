@@ -171,6 +171,13 @@ public class CleanObj
     // chuyển obj về scene chính dùng với Object pooling
     public static void CleanObject(GameObject obj)
     {
+        // Nếu obj là prefab asset thì bỏ qua
+        if (obj.scene.rootCount == 0)
+        {
+            Debug.LogWarning($"[CleanObject] {obj.name} là prefab asset, không thể SetParent.");
+            return;
+        }
+
         obj.transform.SetParent(null);
         SceneManager.MoveGameObjectToScene(obj, SceneManager.GetActiveScene());
     }

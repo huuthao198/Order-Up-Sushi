@@ -6,20 +6,38 @@ using UnityEngine;
 public class LevelData
 {
     public int levelId;
-    public int foodNumber;
+    public List<OrderData> orders;
+    public List<IngredientData> availableIngredients;
+}
+
+[System.Serializable]
+public class OrderData
+{
+    public List<FoodData> foods; // id list
+    public float timeLimit;
     public float coinReward;
-    public List<PlateData> plates;
 }
 
-[Serializable]
-public class PlateData
+
+[System.Serializable]
+public class FoodData
 {
-    public int plateId;
-    public List<PlateStateData> states;
+    public int id;
+    public string foodName;
+    public List<IngredientData> Ingredients;
 }
 
-[Serializable]
-public class PlateStateData
+[System.Serializable]
+public class IngredientData
 {
-    public List<int> foods; // ID của sushi
+    public int id;
+    public string ingredientName;
+}
+
+public enum ItemType
+{
+    Food,
+    Ingredient,
+    EqualText,
+    PlusText,
 }

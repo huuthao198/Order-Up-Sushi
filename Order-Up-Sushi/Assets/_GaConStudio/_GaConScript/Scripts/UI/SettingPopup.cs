@@ -77,7 +77,6 @@ public class SettingPopup : MonoBehaviour
 
     public void OnClose()
     {
-        GameTimer.Instance.StarTime();
         gameObject.SetActive(false);
     }
 }

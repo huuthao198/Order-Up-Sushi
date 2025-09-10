@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_GaConStudio/Scenes/Loading.unity
+    guid: 590fc1684bfdd3a40a419399aa1adac4
+  - enabled: 1
     path: Assets/_GaConStudio/Scenes/GamePlay.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:

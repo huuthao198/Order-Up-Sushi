@@ -6,23 +6,45 @@ public class GameTimer : PersistantAndSingletonBehavior<GameTimer>
     public float TimeCountdown { get; private set; }
     private bool isRunning = false;
 
-    public event Action<float> OnTimeChanged; // callback UI
-    public event Action OnTimeOver;
+    public event Action<float> OnTimeChanged; // mỗi frame báo UI
+    public event Action OnTimeOver;           // khi hết giờ
 
+    /// <summary>
+    /// Đặt thời gian timer (không auto start).
+    /// </summary>
     public void SetTimer(float time)
     {
-        TimeCountdown = time;
-        // báo UI ngay từ đầu
+        TimeCountdown = Mathf.Max(0, time);
         OnTimeChanged?.Invoke(TimeCountdown);
+        isRunning = false;
     }
 
-    public void StarTime()
+    /// <summary>
+    /// Bắt đầu đếm timer (nếu chưa chạy).
+    /// </summary>
+    public void StartTimer()
     {
-        if(isRunning) return;
+        if (isRunning) return;
         isRunning = true;
     }
 
+    /// <summary>
+    /// Tạm dừng timer (giữ nguyên TimeCountdown).
+    /// </summary>
+    public void PauseTimer()
+    {
+        isRunning = false;
+    }
 
+    /// <summary>
+    /// Dừng hẳn timer.
+    /// </summary>
+    public void StopTimer()
+    {
+        isRunning = false;
+        TimeCountdown = 0f;
+        OnTimeChanged?.Invoke(TimeCountdown);
+    }
 
     private void Update()
     {
@@ -38,11 +60,8 @@ public class GameTimer : PersistantAndSingletonBehavior<GameTimer>
         }
 
         TimeCountdown -= Time.deltaTime;
-        OnTimeChanged?.Invoke(TimeCountdown);
-    }
+        if (TimeCountdown < 0) TimeCountdown = 0f;
 
-    internal void StopTimer()
-    {
-        isRunning = false;
+        OnTimeChanged?.Invoke(TimeCountdown);
     }
 }
