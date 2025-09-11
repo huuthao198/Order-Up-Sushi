@@ -34,7 +34,7 @@ public class LoadingScene : MonoBehaviour
         AudioManager.Instance?.InitAudio();
         CutScene.Instance.Show(() =>
         {
-            SceneManager.LoadScene("GamePlay");
+            SceneManager.LoadScene("Home");
         });
     }
 }

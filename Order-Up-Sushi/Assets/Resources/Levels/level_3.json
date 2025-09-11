@@ -1,0 +1,132 @@
+{
+    "levelId": 3,
+    "isHardLevel": false,
+    "orders": [
+        {
+            "foods": [
+                {
+                    "id": 24,
+                    "difficulty": 1,
+                    "foodName": "Fruit Juice",
+                    "Ingredients": [
+                        {
+                            "id": 29,
+                            "ingredientName": "Fruit Mix"
+                        }
+                    ]
+                },
+                {
+                    "id": 11,
+                    "difficulty": 2,
+                    "foodName": "Pancakes",
+                    "Ingredients": [
+                        {
+                            "id": 7,
+                            "ingredientName": "Flour"
+                        },
+                        {
+                            "id": 9,
+                            "ingredientName": "Milk"
+                        },
+                        {
+                            "id": 10,
+                            "ingredientName": "Butter"
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "difficulty": 1,
+                    "foodName": "French Fries",
+                    "Ingredients": [
+                        {
+                            "id": 17,
+                            "ingredientName": "Potato"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 95.0,
+            "coinReward": 115.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 3,
+                    "difficulty": 1,
+                    "foodName": "Shrimp Nigiri",
+                    "Ingredients": [
+                        {
+                            "id": 1,
+                            "ingredientName": "Sushi Rice"
+                        },
+                        {
+                            "id": 5,
+                            "ingredientName": "Shrimp"
+                        }
+                    ]
+                },
+                {
+                    "id": 21,
+                    "difficulty": 1,
+                    "foodName": "Green Tea",
+                    "Ingredients": [
+                        {
+                            "id": 27,
+                            "ingredientName": "Tea"
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "difficulty": 1,
+                    "foodName": "French Fries",
+                    "Ingredients": [
+                        {
+                            "id": 17,
+                            "ingredientName": "Potato"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 90.0,
+            "coinReward": 115.0
+        }
+    ],
+    "availableIngredients": [
+        {
+            "id": 29,
+            "ingredientName": "Fruit Mix"
+        },
+        {
+            "id": 7,
+            "ingredientName": "Flour"
+        },
+        {
+            "id": 9,
+            "ingredientName": "Milk"
+        },
+        {
+            "id": 10,
+            "ingredientName": "Butter"
+        },
+        {
+            "id": 17,
+            "ingredientName": "Potato"
+        },
+        {
+            "id": 1,
+            "ingredientName": "Sushi Rice"
+        },
+        {
+            "id": 5,
+            "ingredientName": "Shrimp"
+        },
+        {
+            "id": 27,
+            "ingredientName": "Tea"
+        }
+    ],
+    "freeRefreshCount": 3,
+    "refreshCost": 26
+}

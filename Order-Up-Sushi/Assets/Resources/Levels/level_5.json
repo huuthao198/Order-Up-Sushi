@@ -1,0 +1,215 @@
+{
+    "levelId": 5,
+    "isHardLevel": true,
+    "orders": [
+        {
+            "foods": [
+                {
+                    "id": 8,
+                    "difficulty": 1,
+                    "foodName": "French Fries",
+                    "Ingredients": [
+                        {
+                            "id": 17,
+                            "ingredientName": "Potato"
+                        }
+                    ]
+                },
+                {
+                    "id": 26,
+                    "difficulty": 2,
+                    "foodName": "Cheese Pizza",
+                    "Ingredients": [
+                        {
+                            "id": 7,
+                            "ingredientName": "Flour"
+                        },
+                        {
+                            "id": 11,
+                            "ingredientName": "Cheese"
+                        },
+                        {
+                            "id": 16,
+                            "ingredientName": "Tomato"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 65.0,
+            "coinReward": 125.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 16,
+                    "difficulty": 3,
+                    "foodName": "Ramen",
+                    "Ingredients": [
+                        {
+                            "id": 21,
+                            "ingredientName": "Noodles"
+                        },
+                        {
+                            "id": 22,
+                            "ingredientName": "Broth"
+                        },
+                        {
+                            "id": 23,
+                            "ingredientName": "Cabbage"
+                        },
+                        {
+                            "id": 24,
+                            "ingredientName": "Pork"
+                        },
+                        {
+                            "id": 25,
+                            "ingredientName": "Soy Sauce"
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "difficulty": 1,
+                    "foodName": "French Fries",
+                    "Ingredients": [
+                        {
+                            "id": 17,
+                            "ingredientName": "Potato"
+                        }
+                    ]
+                },
+                {
+                    "id": 9,
+                    "difficulty": 3,
+                    "foodName": "Double Burger",
+                    "Ingredients": [
+                        {
+                            "id": 12,
+                            "ingredientName": "Beef Patty"
+                        },
+                        {
+                            "id": 12,
+                            "ingredientName": "Beef Patty"
+                        },
+                        {
+                            "id": 11,
+                            "ingredientName": "Cheese"
+                        },
+                        {
+                            "id": 13,
+                            "ingredientName": "Bread Bun"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 110.0,
+            "coinReward": 125.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 3,
+                    "difficulty": 1,
+                    "foodName": "Shrimp Nigiri",
+                    "Ingredients": [
+                        {
+                            "id": 1,
+                            "ingredientName": "Sushi Rice"
+                        },
+                        {
+                            "id": 5,
+                            "ingredientName": "Shrimp"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 30.0,
+            "coinReward": 125.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 14,
+                    "difficulty": 1,
+                    "foodName": "Ice Cream Cone",
+                    "Ingredients": [
+                        {
+                            "id": 20,
+                            "ingredientName": "Ice Cream"
+                        },
+                        {
+                            "id": 19,
+                            "ingredientName": "Sprinkles"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 30.0,
+            "coinReward": 125.0
+        }
+    ],
+    "availableIngredients": [
+        {
+            "id": 17,
+            "ingredientName": "Potato"
+        },
+        {
+            "id": 7,
+            "ingredientName": "Flour"
+        },
+        {
+            "id": 11,
+            "ingredientName": "Cheese"
+        },
+        {
+            "id": 16,
+            "ingredientName": "Tomato"
+        },
+        {
+            "id": 21,
+            "ingredientName": "Noodles"
+        },
+        {
+            "id": 22,
+            "ingredientName": "Broth"
+        },
+        {
+            "id": 23,
+            "ingredientName": "Cabbage"
+        },
+        {
+            "id": 24,
+            "ingredientName": "Pork"
+        },
+        {
+            "id": 25,
+            "ingredientName": "Soy Sauce"
+        },
+        {
+            "id": 12,
+            "ingredientName": "Beef Patty"
+        },
+        {
+            "id": 13,
+            "ingredientName": "Bread Bun"
+        },
+        {
+            "id": 1,
+            "ingredientName": "Sushi Rice"
+        },
+        {
+            "id": 5,
+            "ingredientName": "Shrimp"
+        },
+        {
+            "id": 20,
+            "ingredientName": "Ice Cream"
+        },
+        {
+            "id": 19,
+            "ingredientName": "Sprinkles"
+        }
+    ],
+    "freeRefreshCount": 5,
+    "refreshCost": 30
+}

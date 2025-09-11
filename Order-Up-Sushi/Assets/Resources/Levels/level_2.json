@@ -1,0 +1,178 @@
+{
+    "levelId": 2,
+    "isHardLevel": false,
+    "orders": [
+        {
+            "foods": [
+                {
+                    "id": 22,
+                    "difficulty": 1,
+                    "foodName": "Coffee",
+                    "Ingredients": [
+                        {
+                            "id": 28,
+                            "ingredientName": "Coffee"
+                        },
+                        {
+                            "id": 9,
+                            "ingredientName": "Milk"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 30.0,
+            "coinReward": 110.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 3,
+                    "difficulty": 1,
+                    "foodName": "Shrimp Nigiri",
+                    "Ingredients": [
+                        {
+                            "id": 1,
+                            "ingredientName": "Sushi Rice"
+                        },
+                        {
+                            "id": 5,
+                            "ingredientName": "Shrimp"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 30.0,
+            "coinReward": 110.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 14,
+                    "difficulty": 1,
+                    "foodName": "Ice Cream Cone",
+                    "Ingredients": [
+                        {
+                            "id": 20,
+                            "ingredientName": "Ice Cream"
+                        },
+                        {
+                            "id": 19,
+                            "ingredientName": "Sprinkles"
+                        }
+                    ]
+                },
+                {
+                    "id": 22,
+                    "difficulty": 1,
+                    "foodName": "Coffee",
+                    "Ingredients": [
+                        {
+                            "id": 28,
+                            "ingredientName": "Coffee"
+                        },
+                        {
+                            "id": 9,
+                            "ingredientName": "Milk"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 60.0,
+            "coinReward": 110.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 29,
+                    "difficulty": 1,
+                    "foodName": "Omelette",
+                    "Ingredients": [
+                        {
+                            "id": 6,
+                            "ingredientName": "Egg"
+                        },
+                        {
+                            "id": 10,
+                            "ingredientName": "Butter"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 30.0,
+            "coinReward": 110.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 26,
+                    "difficulty": 2,
+                    "foodName": "Cheese Pizza",
+                    "Ingredients": [
+                        {
+                            "id": 7,
+                            "ingredientName": "Flour"
+                        },
+                        {
+                            "id": 11,
+                            "ingredientName": "Cheese"
+                        },
+                        {
+                            "id": 16,
+                            "ingredientName": "Tomato"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 35.0,
+            "coinReward": 110.0
+        }
+    ],
+    "availableIngredients": [
+        {
+            "id": 28,
+            "ingredientName": "Coffee"
+        },
+        {
+            "id": 9,
+            "ingredientName": "Milk"
+        },
+        {
+            "id": 1,
+            "ingredientName": "Sushi Rice"
+        },
+        {
+            "id": 5,
+            "ingredientName": "Shrimp"
+        },
+        {
+            "id": 20,
+            "ingredientName": "Ice Cream"
+        },
+        {
+            "id": 19,
+            "ingredientName": "Sprinkles"
+        },
+        {
+            "id": 6,
+            "ingredientName": "Egg"
+        },
+        {
+            "id": 10,
+            "ingredientName": "Butter"
+        },
+        {
+            "id": 7,
+            "ingredientName": "Flour"
+        },
+        {
+            "id": 11,
+            "ingredientName": "Cheese"
+        },
+        {
+            "id": 16,
+            "ingredientName": "Tomato"
+        }
+    ],
+    "freeRefreshCount": 3,
+    "refreshCost": 24
+}

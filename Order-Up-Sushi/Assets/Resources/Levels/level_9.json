@@ -1,0 +1,251 @@
+{
+    "levelId": 9,
+    "isHardLevel": false,
+    "orders": [
+        {
+            "foods": [
+                {
+                    "id": 13,
+                    "difficulty": 3,
+                    "foodName": "Donut",
+                    "Ingredients": [
+                        {
+                            "id": 7,
+                            "ingredientName": "Flour"
+                        },
+                        {
+                            "id": 8,
+                            "ingredientName": "Sugar"
+                        },
+                        {
+                            "id": 10,
+                            "ingredientName": "Butter"
+                        },
+                        {
+                            "id": 19,
+                            "ingredientName": "Sprinkles"
+                        }
+                    ]
+                },
+                {
+                    "id": 1,
+                    "difficulty": 1,
+                    "foodName": "Salmon Nigiri",
+                    "Ingredients": [
+                        {
+                            "id": 1,
+                            "ingredientName": "Sushi Rice"
+                        },
+                        {
+                            "id": 3,
+                            "ingredientName": "Salmon"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 70.0,
+            "coinReward": 145.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 23,
+                    "difficulty": 2,
+                    "foodName": "Milkshake",
+                    "Ingredients": [
+                        {
+                            "id": 9,
+                            "ingredientName": "Milk"
+                        },
+                        {
+                            "id": 20,
+                            "ingredientName": "Ice Cream"
+                        },
+                        {
+                            "id": 29,
+                            "ingredientName": "Fruit Mix"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 35.0,
+            "coinReward": 145.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 7,
+                    "difficulty": 1,
+                    "foodName": "Hotdog",
+                    "Ingredients": [
+                        {
+                            "id": 14,
+                            "ingredientName": "Sausage"
+                        },
+                        {
+                            "id": 13,
+                            "ingredientName": "Bread Bun"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 30.0,
+            "coinReward": 145.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 24,
+                    "difficulty": 1,
+                    "foodName": "Fruit Juice",
+                    "Ingredients": [
+                        {
+                            "id": 29,
+                            "ingredientName": "Fruit Mix"
+                        }
+                    ]
+                },
+                {
+                    "id": 10,
+                    "difficulty": 3,
+                    "foodName": "Veggie Sandwich",
+                    "Ingredients": [
+                        {
+                            "id": 13,
+                            "ingredientName": "Bread Bun"
+                        },
+                        {
+                            "id": 15,
+                            "ingredientName": "Lettuce"
+                        },
+                        {
+                            "id": 16,
+                            "ingredientName": "Tomato"
+                        },
+                        {
+                            "id": 18,
+                            "ingredientName": "Chocolate"
+                        }
+                    ]
+                },
+                {
+                    "id": 30,
+                    "difficulty": 3,
+                    "foodName": "Steak Plate",
+                    "Ingredients": [
+                        {
+                            "id": 24,
+                            "ingredientName": "Pork"
+                        },
+                        {
+                            "id": 15,
+                            "ingredientName": "Lettuce"
+                        },
+                        {
+                            "id": 16,
+                            "ingredientName": "Tomato"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 110.0,
+            "coinReward": 145.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 8,
+                    "difficulty": 1,
+                    "foodName": "French Fries",
+                    "Ingredients": [
+                        {
+                            "id": 17,
+                            "ingredientName": "Potato"
+                        }
+                    ]
+                },
+                {
+                    "id": 24,
+                    "difficulty": 1,
+                    "foodName": "Fruit Juice",
+                    "Ingredients": [
+                        {
+                            "id": 29,
+                            "ingredientName": "Fruit Mix"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 60.0,
+            "coinReward": 145.0
+        }
+    ],
+    "availableIngredients": [
+        {
+            "id": 7,
+            "ingredientName": "Flour"
+        },
+        {
+            "id": 8,
+            "ingredientName": "Sugar"
+        },
+        {
+            "id": 10,
+            "ingredientName": "Butter"
+        },
+        {
+            "id": 19,
+            "ingredientName": "Sprinkles"
+        },
+        {
+            "id": 1,
+            "ingredientName": "Sushi Rice"
+        },
+        {
+            "id": 3,
+            "ingredientName": "Salmon"
+        },
+        {
+            "id": 9,
+            "ingredientName": "Milk"
+        },
+        {
+            "id": 20,
+            "ingredientName": "Ice Cream"
+        },
+        {
+            "id": 29,
+            "ingredientName": "Fruit Mix"
+        },
+        {
+            "id": 14,
+            "ingredientName": "Sausage"
+        },
+        {
+            "id": 13,
+            "ingredientName": "Bread Bun"
+        },
+        {
+            "id": 15,
+            "ingredientName": "Lettuce"
+        },
+        {
+            "id": 16,
+            "ingredientName": "Tomato"
+        },
+        {
+            "id": 18,
+            "ingredientName": "Chocolate"
+        },
+        {
+            "id": 24,
+            "ingredientName": "Pork"
+        },
+        {
+            "id": 17,
+            "ingredientName": "Potato"
+        }
+    ],
+    "freeRefreshCount": 3,
+    "refreshCost": 38
+}

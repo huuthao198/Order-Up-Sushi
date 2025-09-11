@@ -6,8 +6,11 @@ using UnityEngine;
 public class LevelData
 {
     public int levelId;
+    public bool isHardLevel;
     public List<OrderData> orders;
     public List<IngredientData> availableIngredients;
+    public int freeRefreshCount;   // số lần refresh free
+    public int refreshCost;        // cost coin mỗi lần refresh sau khi hết free
 }
 
 [System.Serializable]
@@ -23,7 +26,14 @@ public class OrderData
 public class FoodData
 {
     public int id;
+    public int difficulty;
     public string foodName;
+    public List<IngredientData> Ingredients;
+}
+
+[System.Serializable]
+public class IngredientAllData
+{
     public List<IngredientData> Ingredients;
 }
 
@@ -33,6 +43,8 @@ public class IngredientData
     public int id;
     public string ingredientName;
 }
+
+
 
 public enum ItemType
 {

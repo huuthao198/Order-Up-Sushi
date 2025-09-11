@@ -11,6 +11,7 @@ public class SaveManager : PersistantAndSingletonBehavior<SaveManager>
     private float coin;
     private int level;
     private LevelData levelData;
+    private IngredientAllData ingredientAllData;
     private bool isMusic;
     private bool isSound;
 
@@ -54,6 +55,7 @@ public class SaveManager : PersistantAndSingletonBehavior<SaveManager>
         }
 
         LoadLevel(level);
+        LoadIngredienAllData();
     }
 
     private bool GetSound()
@@ -84,24 +86,22 @@ public class SaveManager : PersistantAndSingletonBehavior<SaveManager>
 
     private void LoadLevel(int levelId)
     {
-        //string fileName = $"level_{levelId}";
-        //levelData = LevelLoader.LoadLevel(fileName);
-
-        //levelData = AddressableAssetCache.Instance.GetLevel(levelId);
-
-        //if (levelData != null)
-        //{
-        //    Debug.Log("Load level thành công: " + levelData.levelId);
-        //}
-
-
         string fileName = $"level_{levelId}";
         levelData = LevelLoader.LoadLevel(fileName);
         if (levelData != null)
         {
             Debug.Log($"Loaded Level {levelData.levelId} with {levelData.orders.Count} orders.");
         }
-}
+    }
+
+    private void LoadIngredienAllData()
+    {
+        ingredientAllData = LevelLoader.LoadIngredient();
+        if (ingredientAllData != null)
+        {
+            Debug.Log($"Ingredien All load with {ingredientAllData.Ingredients.Count} Ingredien.");
+        }
+    }
 
     private float GetCoin()
     {
@@ -149,5 +149,10 @@ public class SaveManager : PersistantAndSingletonBehavior<SaveManager>
     {
         SaveLevel(level);
         LoadLevel(level);
+    }
+
+    internal IngredientAllData GetIngredientData()
+    {
+        return ingredientAllData;
     }
 }

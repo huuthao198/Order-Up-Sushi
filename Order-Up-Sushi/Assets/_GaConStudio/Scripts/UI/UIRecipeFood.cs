@@ -14,6 +14,8 @@ public class UIRecipeFood : MonoBehaviour, IPoolableObject
 
     private List<UIRecipeItem> items = new List<UIRecipeItem>();
 
+    public FoodData Data => foodData;
+
     private FoodData foodData;
     public void ResetState()
     {

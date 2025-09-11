@@ -1,0 +1,192 @@
+{
+    "levelId": 6,
+    "isHardLevel": false,
+    "orders": [
+        {
+            "foods": [
+                {
+                    "id": 1,
+                    "difficulty": 1,
+                    "foodName": "Salmon Nigiri",
+                    "Ingredients": [
+                        {
+                            "id": 1,
+                            "ingredientName": "Sushi Rice"
+                        },
+                        {
+                            "id": 3,
+                            "ingredientName": "Salmon"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 30.0,
+            "coinReward": 130.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 8,
+                    "difficulty": 1,
+                    "foodName": "French Fries",
+                    "Ingredients": [
+                        {
+                            "id": 17,
+                            "ingredientName": "Potato"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 30.0,
+            "coinReward": 130.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 22,
+                    "difficulty": 1,
+                    "foodName": "Coffee",
+                    "Ingredients": [
+                        {
+                            "id": 28,
+                            "ingredientName": "Coffee"
+                        },
+                        {
+                            "id": 9,
+                            "ingredientName": "Milk"
+                        }
+                    ]
+                },
+                {
+                    "id": 21,
+                    "difficulty": 1,
+                    "foodName": "Green Tea",
+                    "Ingredients": [
+                        {
+                            "id": 27,
+                            "ingredientName": "Tea"
+                        }
+                    ]
+                },
+                {
+                    "id": 27,
+                    "difficulty": 3,
+                    "foodName": "Pepperoni Pizza",
+                    "Ingredients": [
+                        {
+                            "id": 7,
+                            "ingredientName": "Flour"
+                        },
+                        {
+                            "id": 11,
+                            "ingredientName": "Cheese"
+                        },
+                        {
+                            "id": 16,
+                            "ingredientName": "Tomato"
+                        },
+                        {
+                            "id": 14,
+                            "ingredientName": "Sausage"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 100.0,
+            "coinReward": 130.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 21,
+                    "difficulty": 1,
+                    "foodName": "Green Tea",
+                    "Ingredients": [
+                        {
+                            "id": 27,
+                            "ingredientName": "Tea"
+                        }
+                    ]
+                },
+                {
+                    "id": 22,
+                    "difficulty": 1,
+                    "foodName": "Coffee",
+                    "Ingredients": [
+                        {
+                            "id": 28,
+                            "ingredientName": "Coffee"
+                        },
+                        {
+                            "id": 9,
+                            "ingredientName": "Milk"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 60.0,
+            "coinReward": 130.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 21,
+                    "difficulty": 1,
+                    "foodName": "Green Tea",
+                    "Ingredients": [
+                        {
+                            "id": 27,
+                            "ingredientName": "Tea"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 30.0,
+            "coinReward": 130.0
+        }
+    ],
+    "availableIngredients": [
+        {
+            "id": 1,
+            "ingredientName": "Sushi Rice"
+        },
+        {
+            "id": 3,
+            "ingredientName": "Salmon"
+        },
+        {
+            "id": 17,
+            "ingredientName": "Potato"
+        },
+        {
+            "id": 28,
+            "ingredientName": "Coffee"
+        },
+        {
+            "id": 9,
+            "ingredientName": "Milk"
+        },
+        {
+            "id": 27,
+            "ingredientName": "Tea"
+        },
+        {
+            "id": 7,
+            "ingredientName": "Flour"
+        },
+        {
+            "id": 11,
+            "ingredientName": "Cheese"
+        },
+        {
+            "id": 16,
+            "ingredientName": "Tomato"
+        },
+        {
+            "id": 14,
+            "ingredientName": "Sausage"
+        }
+    ],
+    "freeRefreshCount": 3,
+    "refreshCost": 32
+}

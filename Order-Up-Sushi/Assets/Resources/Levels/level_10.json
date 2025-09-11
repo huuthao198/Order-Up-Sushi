@@ -1,0 +1,238 @@
+{
+    "levelId": 10,
+    "isHardLevel": true,
+    "orders": [
+        {
+            "foods": [
+                {
+                    "id": 28,
+                    "difficulty": 2,
+                    "foodName": "Fried Rice",
+                    "Ingredients": [
+                        {
+                            "id": 1,
+                            "ingredientName": "Sushi Rice"
+                        },
+                        {
+                            "id": 6,
+                            "ingredientName": "Egg"
+                        },
+                        {
+                            "id": 23,
+                            "ingredientName": "Cabbage"
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "difficulty": 1,
+                    "foodName": "French Fries",
+                    "Ingredients": [
+                        {
+                            "id": 17,
+                            "ingredientName": "Potato"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 65.0,
+            "coinReward": 150.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 1,
+                    "difficulty": 1,
+                    "foodName": "Salmon Nigiri",
+                    "Ingredients": [
+                        {
+                            "id": 1,
+                            "ingredientName": "Sushi Rice"
+                        },
+                        {
+                            "id": 3,
+                            "ingredientName": "Salmon"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 30.0,
+            "coinReward": 150.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 27,
+                    "difficulty": 3,
+                    "foodName": "Pepperoni Pizza",
+                    "Ingredients": [
+                        {
+                            "id": 7,
+                            "ingredientName": "Flour"
+                        },
+                        {
+                            "id": 11,
+                            "ingredientName": "Cheese"
+                        },
+                        {
+                            "id": 16,
+                            "ingredientName": "Tomato"
+                        },
+                        {
+                            "id": 14,
+                            "ingredientName": "Sausage"
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "difficulty": 1,
+                    "foodName": "French Fries",
+                    "Ingredients": [
+                        {
+                            "id": 17,
+                            "ingredientName": "Potato"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "difficulty": 1,
+                    "foodName": "Tuna Nigiri",
+                    "Ingredients": [
+                        {
+                            "id": 1,
+                            "ingredientName": "Sushi Rice"
+                        },
+                        {
+                            "id": 4,
+                            "ingredientName": "Tuna"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 100.0,
+            "coinReward": 150.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 14,
+                    "difficulty": 1,
+                    "foodName": "Ice Cream Cone",
+                    "Ingredients": [
+                        {
+                            "id": 20,
+                            "ingredientName": "Ice Cream"
+                        },
+                        {
+                            "id": 19,
+                            "ingredientName": "Sprinkles"
+                        }
+                    ]
+                },
+                {
+                    "id": 24,
+                    "difficulty": 1,
+                    "foodName": "Fruit Juice",
+                    "Ingredients": [
+                        {
+                            "id": 29,
+                            "ingredientName": "Fruit Mix"
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "difficulty": 1,
+                    "foodName": "French Fries",
+                    "Ingredients": [
+                        {
+                            "id": 17,
+                            "ingredientName": "Potato"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 90.0,
+            "coinReward": 150.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 21,
+                    "difficulty": 1,
+                    "foodName": "Green Tea",
+                    "Ingredients": [
+                        {
+                            "id": 27,
+                            "ingredientName": "Tea"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 30.0,
+            "coinReward": 150.0
+        }
+    ],
+    "availableIngredients": [
+        {
+            "id": 1,
+            "ingredientName": "Sushi Rice"
+        },
+        {
+            "id": 6,
+            "ingredientName": "Egg"
+        },
+        {
+            "id": 23,
+            "ingredientName": "Cabbage"
+        },
+        {
+            "id": 17,
+            "ingredientName": "Potato"
+        },
+        {
+            "id": 3,
+            "ingredientName": "Salmon"
+        },
+        {
+            "id": 7,
+            "ingredientName": "Flour"
+        },
+        {
+            "id": 11,
+            "ingredientName": "Cheese"
+        },
+        {
+            "id": 16,
+            "ingredientName": "Tomato"
+        },
+        {
+            "id": 14,
+            "ingredientName": "Sausage"
+        },
+        {
+            "id": 4,
+            "ingredientName": "Tuna"
+        },
+        {
+            "id": 20,
+            "ingredientName": "Ice Cream"
+        },
+        {
+            "id": 19,
+            "ingredientName": "Sprinkles"
+        },
+        {
+            "id": 29,
+            "ingredientName": "Fruit Mix"
+        },
+        {
+            "id": 27,
+            "ingredientName": "Tea"
+        }
+    ],
+    "freeRefreshCount": 5,
+    "refreshCost": 40
+}

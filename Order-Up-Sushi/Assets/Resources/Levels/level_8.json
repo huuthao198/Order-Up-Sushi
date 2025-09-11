@@ -1,0 +1,225 @@
+{
+    "levelId": 8,
+    "isHardLevel": false,
+    "orders": [
+        {
+            "foods": [
+                {
+                    "id": 12,
+                    "difficulty": 2,
+                    "foodName": "Chocolate Cake",
+                    "Ingredients": [
+                        {
+                            "id": 7,
+                            "ingredientName": "Flour"
+                        },
+                        {
+                            "id": 8,
+                            "ingredientName": "Sugar"
+                        },
+                        {
+                            "id": 18,
+                            "ingredientName": "Chocolate"
+                        },
+                        {
+                            "id": 9,
+                            "ingredientName": "Milk"
+                        }
+                    ]
+                },
+                {
+                    "id": 14,
+                    "difficulty": 1,
+                    "foodName": "Ice Cream Cone",
+                    "Ingredients": [
+                        {
+                            "id": 20,
+                            "ingredientName": "Ice Cream"
+                        },
+                        {
+                            "id": 19,
+                            "ingredientName": "Sprinkles"
+                        }
+                    ]
+                },
+                {
+                    "id": 25,
+                    "difficulty": 3,
+                    "foodName": "Bubble Tea",
+                    "Ingredients": [
+                        {
+                            "id": 27,
+                            "ingredientName": "Tea"
+                        },
+                        {
+                            "id": 29,
+                            "ingredientName": "Fruit Mix"
+                        },
+                        {
+                            "id": 30,
+                            "ingredientName": "Tapioca Pearls"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 105.0,
+            "coinReward": 140.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 24,
+                    "difficulty": 1,
+                    "foodName": "Fruit Juice",
+                    "Ingredients": [
+                        {
+                            "id": 29,
+                            "ingredientName": "Fruit Mix"
+                        }
+                    ]
+                },
+                {
+                    "id": 29,
+                    "difficulty": 1,
+                    "foodName": "Omelette",
+                    "Ingredients": [
+                        {
+                            "id": 6,
+                            "ingredientName": "Egg"
+                        },
+                        {
+                            "id": 10,
+                            "ingredientName": "Butter"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 60.0,
+            "coinReward": 140.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 8,
+                    "difficulty": 1,
+                    "foodName": "French Fries",
+                    "Ingredients": [
+                        {
+                            "id": 17,
+                            "ingredientName": "Potato"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 30.0,
+            "coinReward": 140.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 29,
+                    "difficulty": 1,
+                    "foodName": "Omelette",
+                    "Ingredients": [
+                        {
+                            "id": 6,
+                            "ingredientName": "Egg"
+                        },
+                        {
+                            "id": 10,
+                            "ingredientName": "Butter"
+                        }
+                    ]
+                },
+                {
+                    "id": 8,
+                    "difficulty": 1,
+                    "foodName": "French Fries",
+                    "Ingredients": [
+                        {
+                            "id": 17,
+                            "ingredientName": "Potato"
+                        }
+                    ]
+                },
+                {
+                    "id": 1,
+                    "difficulty": 1,
+                    "foodName": "Salmon Nigiri",
+                    "Ingredients": [
+                        {
+                            "id": 1,
+                            "ingredientName": "Sushi Rice"
+                        },
+                        {
+                            "id": 3,
+                            "ingredientName": "Salmon"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 90.0,
+            "coinReward": 140.0
+        }
+    ],
+    "availableIngredients": [
+        {
+            "id": 7,
+            "ingredientName": "Flour"
+        },
+        {
+            "id": 8,
+            "ingredientName": "Sugar"
+        },
+        {
+            "id": 18,
+            "ingredientName": "Chocolate"
+        },
+        {
+            "id": 9,
+            "ingredientName": "Milk"
+        },
+        {
+            "id": 20,
+            "ingredientName": "Ice Cream"
+        },
+        {
+            "id": 19,
+            "ingredientName": "Sprinkles"
+        },
+        {
+            "id": 27,
+            "ingredientName": "Tea"
+        },
+        {
+            "id": 29,
+            "ingredientName": "Fruit Mix"
+        },
+        {
+            "id": 30,
+            "ingredientName": "Tapioca Pearls"
+        },
+        {
+            "id": 6,
+            "ingredientName": "Egg"
+        },
+        {
+            "id": 10,
+            "ingredientName": "Butter"
+        },
+        {
+            "id": 17,
+            "ingredientName": "Potato"
+        },
+        {
+            "id": 1,
+            "ingredientName": "Sushi Rice"
+        },
+        {
+            "id": 3,
+            "ingredientName": "Salmon"
+        }
+    ],
+    "freeRefreshCount": 3,
+    "refreshCost": 36
+}

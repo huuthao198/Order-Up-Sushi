@@ -6,6 +6,8 @@ public class UIFood : MonoBehaviour, IPoolableObject
     [SerializeField] private TextMeshProUGUI foodName;
     [SerializeField] private Image foodImage;
 
+    public FoodData Data => foodData;
+
     FoodData foodData;
     public void Init(FoodData data)
     {

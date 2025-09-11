@@ -1,0 +1,153 @@
+{
+    "levelId": 1,
+    "isHardLevel": false,
+    "orders": [
+        {
+            "foods": [
+                {
+                    "id": 11,
+                    "difficulty": 2,
+                    "foodName": "Pancakes",
+                    "Ingredients": [
+                        {
+                            "id": 7,
+                            "ingredientName": "Flour"
+                        },
+                        {
+                            "id": 9,
+                            "ingredientName": "Milk"
+                        },
+                        {
+                            "id": 10,
+                            "ingredientName": "Butter"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 35.0,
+            "coinReward": 105.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 22,
+                    "difficulty": 1,
+                    "foodName": "Coffee",
+                    "Ingredients": [
+                        {
+                            "id": 28,
+                            "ingredientName": "Coffee"
+                        },
+                        {
+                            "id": 9,
+                            "ingredientName": "Milk"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 30.0,
+            "coinReward": 105.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 12,
+                    "difficulty": 2,
+                    "foodName": "Chocolate Cake",
+                    "Ingredients": [
+                        {
+                            "id": 7,
+                            "ingredientName": "Flour"
+                        },
+                        {
+                            "id": 8,
+                            "ingredientName": "Sugar"
+                        },
+                        {
+                            "id": 18,
+                            "ingredientName": "Chocolate"
+                        },
+                        {
+                            "id": 9,
+                            "ingredientName": "Milk"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 35.0,
+            "coinReward": 105.0
+        },
+        {
+            "foods": [
+                {
+                    "id": 14,
+                    "difficulty": 1,
+                    "foodName": "Ice Cream Cone",
+                    "Ingredients": [
+                        {
+                            "id": 20,
+                            "ingredientName": "Ice Cream"
+                        },
+                        {
+                            "id": 19,
+                            "ingredientName": "Sprinkles"
+                        }
+                    ]
+                },
+                {
+                    "id": 21,
+                    "difficulty": 1,
+                    "foodName": "Green Tea",
+                    "Ingredients": [
+                        {
+                            "id": 27,
+                            "ingredientName": "Tea"
+                        }
+                    ]
+                }
+            ],
+            "timeLimit": 60.0,
+            "coinReward": 105.0
+        }
+    ],
+    "availableIngredients": [
+        {
+            "id": 7,
+            "ingredientName": "Flour"
+        },
+        {
+            "id": 9,
+            "ingredientName": "Milk"
+        },
+        {
+            "id": 10,
+            "ingredientName": "Butter"
+        },
+        {
+            "id": 28,
+            "ingredientName": "Coffee"
+        },
+        {
+            "id": 8,
+            "ingredientName": "Sugar"
+        },
+        {
+            "id": 18,
+            "ingredientName": "Chocolate"
+        },
+        {
+            "id": 20,
+            "ingredientName": "Ice Cream"
+        },
+        {
+            "id": 19,
+            "ingredientName": "Sprinkles"
+        },
+        {
+            "id": 27,
+            "ingredientName": "Tea"
+        }
+    ],
+    "freeRefreshCount": 3,
+    "refreshCost": 22
+}

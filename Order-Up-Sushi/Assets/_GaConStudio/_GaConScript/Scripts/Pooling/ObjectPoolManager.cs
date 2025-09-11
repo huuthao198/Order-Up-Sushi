@@ -165,6 +165,17 @@ public class ObjectPoolManager : MonoBehaviour
     {
         return $"{prefab.name}_POOL";
     }
+
+    public void ReturnPoolToNextFrame(GameObject obj)
+    {
+        StartCoroutine(ReturnFoodNextFrame(obj));
+    }
+
+    private IEnumerator ReturnFoodNextFrame(GameObject go)
+    {
+        yield return null; // 1 frame
+        ReturnObject(go);
+    }
 }
 public class CleanObj
 {

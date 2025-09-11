@@ -1,10 +1,11 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FoodItem : MonoBehaviour, IPoolableObject
 {
-    [SerializeField] private TextMeshPro nameIngredient;
-    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private TextMeshProUGUI nameIngredient;
+    [SerializeField] private Image spriteRenderer;
 
     public FoodData Data => data;
 

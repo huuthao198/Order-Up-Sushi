@@ -1,45 +1,81 @@
-﻿using UnityEngine;
-using TMPro;
+﻿using DG.Tweening;
 using System;
 using System.Collections;
-using UnityEngine.UI;
-using NUnit.Framework;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.UI;
 public class UIGamePlayManager : SingletonBehavior<UIGamePlayManager>
 {
     [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private TextMeshProUGUI levelText;
+    [SerializeField] private TextMeshProUGUI orderSusscesCountText;
+    [SerializeField] private TextMeshProUGUI orderFaildCountText;
+
     [SerializeField] private Button startBtn;
-    [Header("UI Food")]
-    [SerializeField] private Transform foodUIContent;
-    [SerializeField] private UIFood foodUIPrefab;
     [Header("UI Recipe")]
     [SerializeField] private UIRecipeFood recipeUIPrefab;
     [SerializeField] private Transform recipeUIContent;
-
-    List<UIFood> foodList = new ();
+    [Header("UI Ingredient")]
+    [SerializeField] private Transform IngredientUI;
+    [Header("UI Popup")]
+    [SerializeField] private WinPopup winPopup;
+    [SerializeField] private LosePopup losePopup;
     List<UIRecipeFood> recipeList = new ();
+
     private void Start()
     {
+        winPopup.gameObject.SetActive (false);
+        losePopup.gameObject.SetActive (false);
+
+        levelText.text = string.Format($"Level\n{GamePlayerManager.Instance.Level}");
         StartCoroutine(DelayLoad());
+
+        OrderManager.OnLevelComplete += OrderManager_OnLevelComplete;
+    }
+
+    private void OrderManager_OnLevelComplete(bool isWin, int totalCoin)
+    {
+        if (isWin) 
+        { 
+            winPopup.gameObject.SetActive(true);
+            winPopup.Show(totalCoin);
+        }
+        else
+        {
+            losePopup.gameObject.SetActive(true);
+            losePopup.Show();
+        }
     }
 
     IEnumerator DelayLoad()
     {
         yield return new WaitForSeconds(.3f);
         CutScene.Instance.Hide();
+        StartGame();
     }
 
     public void StartGame()
     {
         startBtn.gameObject.SetActive(false);
-        var levelData = SaveManager.Instance.GetLevelData();
-        OrderManager.Instance.StartLevel(levelData);
-        IngredientSpawner.Instance.SetupIngredients(levelData);
+        IngredientUI.DOKill();
+        IngredientUI.DOLocalMove(Vector3.zero, .5f)
+            .OnComplete(() =>
+            {
+                GamePlayerManager.Instance.StartLevel();
+                ChefController.Instance.InitChef();
+            });
     }
 
     public void ResetGame()
     {
-        startBtn.gameObject.SetActive(true);
+        startBtn.gameObject.SetActive(false);
+        winPopup.gameObject.SetActive(false);
+        losePopup.gameObject.SetActive(false);
+        levelText.text = string.Format($"Level\n{GamePlayerManager.Instance.Level}");
+        ReturnFoodRecipeUI();
+        StartGame();
     }
 
     private void OnEnable()
@@ -50,7 +86,7 @@ public class UIGamePlayManager : SingletonBehavior<UIGamePlayManager>
 
     private void OnDisable()
     {
-        if (GameTimer.Instance == null) return;
+        OrderManager.OnLevelComplete -= OrderManager_OnLevelComplete;
 
         GameTimer.Instance.OnTimeChanged -= UpdateTimerUI;
         GameTimer.Instance.OnTimeOver -= HandleTimeOver;
@@ -75,33 +111,10 @@ public class UIGamePlayManager : SingletonBehavior<UIGamePlayManager>
 
         foreach (var item in foods)
         {
-            var f = UIPoolManager.GetUIObject(foodUIPrefab, foodUIContent);
-            f.transform.localPosition = Vector3.zero;
-            f.transform.localRotation = Quaternion.identity;
-            f.transform.localScale = Vector3.one;
-
-            f.Init(item);
-            foodList.Add(f);
-
-
             var r = UIPoolManager.GetUIObject(recipeUIPrefab, recipeUIContent);
             r.Setup(item);
             recipeList.Add(r);
         }
-
-        foodUIContent.position = Camera.main.WorldToScreenPoint(dish.transform.position);
-    }
-
-    public void ReturnFoodUI()
-    {
-        if(foodList.Count == 0) return;
-
-        foreach (var item in foodList)
-        {
-            UIPoolManager.ReturnObject(item);
-        }
-
-        foodList.Clear();
     }
 
     public void ReturnFoodRecipeUI()
@@ -114,5 +127,21 @@ public class UIGamePlayManager : SingletonBehavior<UIGamePlayManager>
         }
 
         recipeList.Clear();
+    }
+
+    public void DoneRecipeFood(FoodData food)
+    {
+        var r = recipeList.Find(r => r.Data.id == food.id);
+        if (r != null) 
+        {
+            UIPoolManager.ReturnObject(r);
+        }
+    }
+
+    public void UpdateOrderCount(int sussces, int faild, int total)
+    {
+        orderSusscesCountText.text = $"{sussces}/{total}";
+        orderFaildCountText.text = $"{faild}/{total}";
+
     }
 }

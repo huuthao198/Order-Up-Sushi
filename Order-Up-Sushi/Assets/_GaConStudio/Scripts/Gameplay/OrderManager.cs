@@ -2,12 +2,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class OrderManager : SingletonBehavior<OrderManager>
 {
     [Header("Dish Prefabs & Positions")]
-    [SerializeField] private GameObject dishPrefab;
+    [SerializeField] private OrderDish dishPrefab;
     [SerializeField] private Transform spawnLeft;
     [SerializeField] private Transform centerPos;
     [SerializeField] private Transform exitRight;
@@ -16,6 +17,8 @@ public class OrderManager : SingletonBehavior<OrderManager>
     [SerializeField] private float successRateThreshold = 0.8f; // 80%
 
     private OrderDish currentDish;
+    private OrderData currentOrderData;
+
     private int currentOrderIndex = 0;
     private LevelData levelData;
 
@@ -23,9 +26,15 @@ public class OrderManager : SingletonBehavior<OrderManager>
     private int successOrders;
     private int failedOrders;
     private int totalCoin;
+    private int freeRefreshPerLevel;
+    private int refreshCoinCost;
+    private int freeRefreshRemaining;
 
     public static event Action<bool, int> OnLevelComplete;
     // bool = win/lose, int = coin reward
+    public static event Action<int, bool> OnRefreshCostChanged;
+    // int = coin cost, bool = isFree
+    public static event Action<int> OnCoinChanged;
 
     public void StartLevel(LevelData levelData)
     {
@@ -36,6 +45,14 @@ public class OrderManager : SingletonBehavior<OrderManager>
         failedOrders = 0;
         totalCoin = 0;
         totalOrders = levelData.orders.Count;
+        freeRefreshPerLevel = levelData.freeRefreshCount;
+        refreshCoinCost = levelData.refreshCost;
+
+        freeRefreshRemaining = freeRefreshPerLevel;
+
+        OnCoinChanged?.Invoke(totalCoin);
+
+        UpdateOrderCount();
 
         SpawnDish();
     }
@@ -51,16 +68,13 @@ public class OrderManager : SingletonBehavior<OrderManager>
         var orderData = levelData.orders[currentOrderIndex];
         currentOrderIndex++;
 
-        var dishGO = ObjectPoolManager.GetObject(dishPrefab);
+        var dish = UIPoolManager.GetUIObject(dishPrefab, this.transform);
 
-        CleanObj.CleanObject(dishGO);
+        dish.transform.localPosition = spawnLeft.localPosition;
+        dish.transform.localRotation = Quaternion.identity;
 
-        dishGO.transform.SetParent(this.transform);
-        dishGO.transform.localPosition = spawnLeft.localPosition;
-        dishGO.transform.localRotation = Quaternion.identity;
-
-        OrderDish dish = dishGO.GetComponent<OrderDish>();
         currentDish = dish;
+        currentOrderData = orderData;
 
         dish.Setup(orderData.foods, orderData.timeLimit);
 
@@ -70,24 +84,35 @@ public class OrderManager : SingletonBehavior<OrderManager>
 
             successOrders++;
             totalCoin += (int)orderData.coinReward;
+
+            OnCoinChanged?.Invoke(totalCoin);
+
             Debug.Log($"✅ Order Success! +{orderData.coinReward} coins (Total: {totalCoin})");
-
-            UIGamePlayManager.Instance.ReturnFoodUI();
+            UpdateOrderCount();
+            dish.ReturnFoodUI();
             UIGamePlayManager.Instance.ReturnFoodRecipeUI();
+            ChefController.Instance.ReturnFoodToPool();
 
-            MoveTo(completedDish.transform, exitRight.position, 1f, () =>
+            DOVirtual.DelayedCall(.1f, () =>
             {
-                ChefController.Instance.ReturnFoodToPool();
-                ObjectPoolManager.ReturnObject(completedDish.gameObject);
-                currentDish = null;
-                SpawnNext();
+                MoveTo(completedDish.transform, exitRight.position, 1f, () =>
+                {
+                    UIPoolManager.ReturnObject(completedDish);
+
+                    currentDish = null;
+                    currentOrderData = null;
+                    SpawnNext();
+                });
             });
         };
 
-        MoveTo(dish.transform, centerPos.position, 1f, () =>
+        DOVirtual.DelayedCall(.1f, () =>
         {
-            UIGamePlayManager.Instance.InitOrderUI(orderData.foods, dish.GetPointFood());
-            StartDishTimer(dish, orderData);
+            MoveTo(dish.transform, centerPos.position, 1f, () =>
+            {
+                UIGamePlayManager.Instance.InitOrderUI(orderData.foods, dish.GetPointFood());
+                StartDishTimer(dish, orderData);
+            });
         });
     }
 
@@ -103,6 +128,7 @@ public class OrderManager : SingletonBehavior<OrderManager>
         if (currentDish == null) return;
 
         failedOrders++;
+        UpdateOrderCount();
         Debug.Log("❌ Order Failed! Time out!");
 
         // check lose early
@@ -112,13 +138,19 @@ public class OrderManager : SingletonBehavior<OrderManager>
             EndLevel(false);
             return;
         }
-        UIGamePlayManager.Instance.ReturnFoodUI();
+
+        currentDish.ReturnFoodUI();
         UIGamePlayManager.Instance.ReturnFoodRecipeUI();
-        MoveTo(currentDish.transform, exitRight.position, 1f, () =>
+
+        DOVirtual.DelayedCall(.1f, () =>
         {
-            ObjectPoolManager.ReturnObject(currentDish.gameObject);
-            currentDish = null;
-            SpawnNext();
+            MoveTo(currentDish.transform, exitRight.position, 1f, () =>
+            {
+                ResetOrder();
+                currentDish = null;
+                currentOrderData = null;
+                SpawnNext();
+            });
         });
     }
 
@@ -142,13 +174,19 @@ public class OrderManager : SingletonBehavior<OrderManager>
         Debug.Log(isWin
             ? $"🎉 Level {levelData.levelId} Complete! Coin: {totalCoin}"
             : $"💀 Level {levelData.levelId} Failed! Coin: {totalCoin}");
+        if (isWin)
+        {
+            //Setup next level count
+            GamePlayerManager.Instance.SetNextLevel();
+        }
 
+        GamePlayerManager.Instance.AddCoin(totalCoin);
         OnLevelComplete?.Invoke(isWin, totalCoin);
     }
 
     private void SpawnNext()
     {
-        StartCoroutine(DelaySpawn(1f));
+        StartCoroutine(DelaySpawn(.2f));
     }
 
     private IEnumerator DelaySpawn(float delay)
@@ -167,5 +205,60 @@ public class OrderManager : SingletonBehavior<OrderManager>
     internal OrderDish GetDish()
     {
         return currentDish;
+    }
+
+    internal OrderData GetOrder()
+    {
+        return currentOrderData;
+    }
+
+    public bool TryUseRefresh()
+    {
+        if (freeRefreshRemaining > 0)
+        {
+            freeRefreshRemaining--;
+            UpdateRefreshUI();
+            return true;
+        }
+        else
+        {
+            if (totalCoin >= refreshCoinCost)
+            {
+                totalCoin -= refreshCoinCost;
+                UpdateRefreshUI();
+                OnCoinChanged?.Invoke(totalCoin);
+                return true;
+            }
+            else
+            {
+                Debug.Log("❌ Not enough coin to refresh!");
+                return false;
+            }
+        }
+    }
+
+    private void UpdateRefreshUI()
+    {
+        bool isFree = freeRefreshRemaining > 0;
+        int cost = isFree ? 0 : refreshCoinCost;
+
+        OnRefreshCostChanged?.Invoke(cost, isFree);
+    }
+
+    private void UpdateOrderCount()
+    {
+        UIGamePlayManager.Instance.UpdateOrderCount(successOrders, failedOrders, totalOrders);
+    }
+
+    public void ResetOrder()
+    {
+        if(currentDish != null)
+        {
+            currentDish.ReturnFoodUI();
+            UIPoolManager.ReturnObject(currentDish);
+        }
+        currentDish = null;
+
+        ChefController.Instance.ReturnFoodToPool();
     }
 }
