@@ -44,32 +44,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 487c040f07dcbea408db6bc2eb6ec960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  assetReferences:
-  - key: CounterText
-    asset: {fileID: 8602241281528074451, guid: 65cd4cb4954e8e24e84afd4e3bf3be7b, type: 3}
-  - key: PlateWin
-    asset: {fileID: 6159431811291253, guid: e8a0f51ca8fdd0f43b99b151d10baae3, type: 3}
-  - key: 0
-    asset: {fileID: 5929574872613733065, guid: 050e85f9ef9ef624c96d566a53879240, type: 3}
-  - key: 1
-    asset: {fileID: 8970618880024424711, guid: f154624ab1e68a94d89f44a3565e1218, type: 3}
-  - key: 2
-    asset: {fileID: 2878168604654071132, guid: b229e0efc0ddbc34d9fa0dc7d289240c, type: 3}
-  - key: 3
-    asset: {fileID: 6941356470847178870, guid: f19f0e9ef8db6ff48870ad2b59f0bbfd, type: 3}
-  - key: 4
-    asset: {fileID: 2312149575197407230, guid: d0b8411904c812f458c00be404c8ce75, type: 3}
-  - key: 5
-    asset: {fileID: 2717869480838078820, guid: 4bb3e7427ae59ad45aa4e59270d385dd, type: 3}
-  - key: 6
-    asset: {fileID: 3936499310032166103, guid: 3571ec310e7110a4180d50e434b0a807, type: 3}
-  - key: 7
-    asset: {fileID: 4361510500400401453, guid: 0352cad5d97d99b419729e4708987ab6, type: 3}
-  - key: 8
-    asset: {fileID: 4361510500400401453, guid: 77c94dc9a9f2adf4ea7b08fe5b3f5236, type: 3}
-  - key: 9
-    asset: {fileID: 4361510500400401453, guid: 7598ee8721951ac429772648f1d950f6, type: 3}
-  - key: 10
-    asset: {fileID: 4361510500400401453, guid: e6912e7f196afcf4c91e6827456730c0, type: 3}
-  - key: 11
-    asset: {fileID: 4361510500400401453, guid: dcab223eb219dba4780c64372a12ab7d, type: 3}
+  foodSprs:
+  - {fileID: 21300000, guid: 76c3e4a42592cac43a10bb758a1664bc, type: 3}
+  - {fileID: 21300000, guid: 76c3e4a42592cac43a10bb758a1664bc, type: 3}
+  - {fileID: 21300000, guid: 870df4fc4e411064cb15a344b781e152, type: 3}
+  - {fileID: 21300000, guid: 5466c05e025937d41a90fa946b925075, type: 3}
+  - {fileID: 21300000, guid: 3fce249d41c72b1469850f6002844b01, type: 3}
+  - {fileID: 21300000, guid: ea8d3cd6851274343a2ca8825778ba69, type: 3}
+  - {fileID: 21300000, guid: 9af31476b89142a4594720dd819a04fe, type: 3}
+  - {fileID: 21300000, guid: 5b9d2c82f4c757f49857ce11817e8f75, type: 3}
+  - {fileID: 21300000, guid: 7d15a0103c82d144f97f87b48df24321, type: 3}
+  - {fileID: 21300000, guid: ca2b9a51a3f08404cb85ef2ae1d95caf, type: 3}
+  - {fileID: 21300000, guid: 6b02a003b40b2094cbecd7ae545b045f, type: 3}
+  - {fileID: 21300000, guid: adf12fc1ef67774449a0b25fbcad325d, type: 3}
+  - {fileID: 21300000, guid: c4177aab873129f4c8c8a370d16ffb31, type: 3}
+  - {fileID: 21300000, guid: 3860078bc04c24847aeabc2517611f76, type: 3}
+  - {fileID: 21300000, guid: 7e32d41fe9eb93c4da6df2ce38f29655, type: 3}
+  - {fileID: 21300000, guid: 35c38abb849cb4c47a0d498c0bd7b375, type: 3}
+  - {fileID: 21300000, guid: 1291a3ed8c8bde74495d150f08a0bd94, type: 3}
+  - {fileID: 21300000, guid: cc95138ef6cb9c94d8cadc821c7d0879, type: 3}
+  - {fileID: 21300000, guid: 5fad5ed63900df441b0484912bc267b7, type: 3}
+  - {fileID: 21300000, guid: 7af2077beb810aa4695e0706d0e48419, type: 3}
+  - {fileID: 21300000, guid: 354966c5f385b0547aefe873769abfa8, type: 3}
+  - {fileID: 21300000, guid: e9d814c0aae8eef4d8434a0a595741fc, type: 3}
+  - {fileID: 21300000, guid: 5b1456cfc1c4a844fb2cf6305fe17161, type: 3}
+  - {fileID: 21300000, guid: f9848ce7b851f4b429dd499a590b808d, type: 3}
+  - {fileID: 21300000, guid: 616d44ca526fdd3418969dc9bcd0b530, type: 3}
+  - {fileID: 21300000, guid: c909315995e3ad441981338cd1495dd7, type: 3}
+  - {fileID: 21300000, guid: e67fb727e6d3d3a488ebfc7fe751a96b, type: 3}
+  - {fileID: 21300000, guid: a9ac0a8b858c7944c9657aa3a02dd87c, type: 3}
+  - {fileID: 21300000, guid: ad804ead3f74ea048a7790b92d5d528a, type: 3}
+  - {fileID: 21300000, guid: a15a7f9da6c3cfc488ed8d1aa4b067b9, type: 3}
+  - {fileID: 21300000, guid: dd8b2de834433514ab595d8d34adf13d, type: 3}
+  assetReferences: []

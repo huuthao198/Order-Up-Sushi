@@ -17,6 +17,13 @@ public class UIRecipeItem : MonoBehaviour, IPoolableObject
         if(type == ItemType.Food || type == ItemType.Ingredient)
         {
             icon.gameObject.SetActive(true);
+
+            if(type == ItemType.Food)
+            {
+                var spr = AssetManager.Instance.GetFoodSpr(id);
+                icon.sprite = spr;
+            }
+
         }
         else icon.gameObject.SetActive(false);
 

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class FoodItem : MonoBehaviour, IPoolableObject
 {
     [SerializeField] private TextMeshProUGUI nameIngredient;
-    [SerializeField] private Image spriteRenderer;
+    [SerializeField] private Image foodImage;
 
     public FoodData Data => data;
 
@@ -13,6 +13,8 @@ public class FoodItem : MonoBehaviour, IPoolableObject
     public void Init(FoodData data)
     {
         this.data = data;
+
+        foodImage.sprite = AssetManager.Instance.GetFoodSpr(data.id);
 
         nameIngredient.text = data.foodName;
     }

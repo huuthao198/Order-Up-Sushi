@@ -12,6 +12,7 @@ public class UIFood : MonoBehaviour, IPoolableObject
     public void Init(FoodData data)
     {
         foodData = data;
+        foodImage.sprite = AssetManager.Instance.GetFoodSpr(data.id);
         this.foodName.text = foodData.foodName;
     }
 

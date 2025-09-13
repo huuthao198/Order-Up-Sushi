@@ -75,7 +75,7 @@ public class UIGamePlayManager : SingletonBehavior<UIGamePlayManager>
         losePopup.gameObject.SetActive(false);
         levelText.text = string.Format($"Level\n{GamePlayerManager.Instance.Level}");
         ReturnFoodRecipeUI();
-        StartGame();
+
     }
 
     private void OnEnable()

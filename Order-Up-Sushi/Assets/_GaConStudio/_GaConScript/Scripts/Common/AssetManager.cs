@@ -13,6 +13,10 @@ public class AssetReference
 public class AssetManager : PersistantAndSingletonBehavior<AssetManager>
 {
 
+    [Header("Food Spr")]
+    [SerializeField] private List<Sprite> foodSprs;
+
+
     [Header("Custom Asset References")]
     [SerializeField] private List<AssetReference> assetReferences = new List<AssetReference>();
 
@@ -29,6 +33,11 @@ public class AssetManager : PersistantAndSingletonBehavior<AssetManager>
                 assetDict[entry.key] = entry.asset;
             }
         }
+    }
+
+    public Sprite GetFoodSpr(int key)
+    {
+        return foodSprs[key];
     }
 
     public T GetAsset<T>(string key) where T : UnityEngine.Object

@@ -141,6 +141,8 @@ public class ChefController : SingletonBehavior<ChefController>
 
     private void CleanPlate()
     {
+        processText.text = "";
+
         foreach (var ing in ingredientItem)
         {
             UIPoolManager.ReturnObject(ing);

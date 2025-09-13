@@ -31,6 +31,9 @@ public class GamePlayerManager : SingletonBehavior<GamePlayerManager>
     {
         OrderManager.Instance.ResetOrder();
         UIGamePlayManager.Instance.ResetGame();
+        OrderManager.Instance.StartLevel(CurrentLevelData);
+        IngredientGridManager.Instance.RefreshIngredients();
+        ChefController.Instance.InitChef();
         StartCoroutine(DelayShow());
     }
 
